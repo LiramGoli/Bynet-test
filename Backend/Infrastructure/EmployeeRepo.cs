@@ -11,7 +11,7 @@ namespace Infrastructure
 {
     public class EmployeeRepo : IEmployeeRepo
     {
-        const string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private const string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
         public async Task<List<Employee>> GetEmployees()
         {
@@ -48,6 +48,74 @@ namespace Infrastructure
             }
         }
 
+        public async Task<List<Employee>> GetManagers()
+        {
+            try
+            {
+                List<Employee> employees = new List<Employee>();
+                using SqlConnection connection = new SqlConnection(connectionString);
+                await using SqlCommand command = connection.CreateCommand();
+
+                command.CommandText = "dbo.GetManagers";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                await connection.OpenAsync();
+                await using var reader = await command.ExecuteReaderAsync();
+                while (await reader.ReadAsync())
+                {
+                    Employee employee = new Employee()
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
+                        Name = reader["Name"].ToString(),
+                        IdNumber = reader["IdNumber"].ToString(),
+                        Role = reader["Role"].ToString(),
+                        Manager = reader["Manager"] == DBNull.Value ? string.Empty : reader["Manager"].ToString(),
+                    };
+                    employees.Add(employee);
+                }
+                return employees;
+
+            } catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+        }
+        public async Task<List<Employee>> GetOSEmployees()
+        {
+            try
+            {
+                List<Employee> employees = new List<Employee>();
+                using SqlConnection connection = new SqlConnection(connectionString);
+                await using SqlCommand command = connection.CreateCommand();
+
+                command.CommandText = "dbo.GetOSEmployees";
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+
+                await connection.OpenAsync();
+                await using var reader = await command.ExecuteReaderAsync();
+                while (await reader.ReadAsync())
+                {
+                    Employee employee = new Employee()
+                    {
+                        Id = int.Parse(reader["Id"].ToString()),
+                        Name = reader["Name"].ToString(),
+                        IdNumber = reader["IdNumber"].ToString(),
+                        Role = reader["Role"].ToString(),
+                        Manager = reader["Manager"] == DBNull.Value ? string.Empty : reader["Manager"].ToString(),
+                    };
+                    employees.Add(employee);
+                }
+                return employees;
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+
+        }
         public async Task CreateEmployee(Employee employee)
         {
             try

@@ -25,29 +25,13 @@ namespace Backend.Controllers
         [HttpGet("managers")]
         public async Task<List<Employee>> GetManagers()
         {
-            List<Employee> managers = await _employeeRepo.GetEmployees();
-            for (int i = managers.Count - 1; i >= 0; i--)
-            {
-                if (!managers[i].Role.ToLower().Contains("manag"))
-                {
-                    managers.RemoveAt(i);
-                }
-            }
-            return managers;
+            return await _employeeRepo.GetManagers();
         }
 
         [HttpGet("os-employees")]
         public async Task<List<Employee>> GetOsEmployees()
         {
-            List<Employee> employees = await _employeeRepo.GetEmployees();
-            for (int i = employees.Count - 1; i >= 0; i--)
-            {
-                if (employees[i].Role.ToLower() != ("os employee"))
-                {
-                    employees.RemoveAt(i);
-                }
-            }
-            return employees;
+            return await _employeeRepo.GetOSEmployees();
         }
 
         [HttpPost("create")]

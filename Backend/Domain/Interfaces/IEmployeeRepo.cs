@@ -11,6 +11,10 @@ namespace Domain
     {
         Task<List<Employee>> GetEmployees();
 
+        Task<List<Employee>> GetManagers();
+
+        Task<List<Employee>> GetOSEmployees();
+
         Task CreateEmployee(Employee employee);
 
         Task DeleteEmployee(Employee employee);
