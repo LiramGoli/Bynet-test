@@ -13,3 +13,4 @@ C:\Users\liram\Desktop\projects\dotnet_playground\test\Backend\Infrastructure\ob
 C:\Users\liram\Desktop\projects\dotnet_playground\test\Backend\Infrastructure\obj\Debug\net8.0\refint\Infrastructure.dll
 C:\Users\liram\Desktop\projects\dotnet_playground\test\Backend\Infrastructure\obj\Debug\net8.0\Infrastructure.pdb
 C:\Users\liram\Desktop\projects\dotnet_playground\test\Backend\Infrastructure\obj\Debug\net8.0\ref\Infrastructure.dll
+C:\Users\liram\Desktop\projects\dotnet_playground\test\Backend\Infrastructure\obj\Debug\net8.0\Infrastructure.sourcelink.json

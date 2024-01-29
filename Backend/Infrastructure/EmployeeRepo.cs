@@ -11,13 +11,14 @@ namespace Infrastructure
 {
     public class EmployeeRepo : IEmployeeRepo
     {
+        const string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
         public async Task<List<Employee>> GetEmployees()
         {
             try
             {
                 List<Employee> employees = new List<Employee>();
-                await using SqlConnection connection = new("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection connection = new SqlConnection(connectionString);
                 await using SqlCommand command = connection.CreateCommand();
 
                 command.CommandText = "dbo.GetEmployees";
@@ -56,7 +57,7 @@ namespace Infrastructure
                 {
                     throw new Exception("role doesnt exist");
                 }
-                using SqlConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection connection = new SqlConnection(connectionString);
                 await using SqlCommand command = connection.CreateCommand();
 
                 command.CommandText = "dbo.CreateEmployee";
@@ -82,7 +83,7 @@ namespace Infrastructure
         {
             try
             {
-                using SqlConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection connection = new SqlConnection(connectionString);
                 await using SqlCommand command = connection.CreateCommand();
 
                 command.CommandText = "dbo.DeleteEmployee";
@@ -96,10 +97,10 @@ namespace Infrastructure
                 Console.WriteLine(ex.Message);
                 throw;
             }
-           
+
         }
 
-        public  async Task UpdateEmployee(Employee employee)
+        public async Task UpdateEmployee(Employee employee)
         {
             try
             {
@@ -108,7 +109,7 @@ namespace Infrastructure
                 {
                     throw new Exception("role doesnt exist");
                 }
-                using SqlConnection connection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=EmployeesDB;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+                using SqlConnection connection = new SqlConnection(connectionString);
                 await using SqlCommand command = connection.CreateCommand();
 
                 command.CommandText = "dbo.UpdateEmployee";
