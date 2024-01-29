@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Backend", "Backend\Backend.csproj", "{D9F4F150-51CF-41A0-A9EB-9D6F23DC141F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{9281771B-F357-4A9D-90E7-EE5699E3921A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{9F81FD08-9091-43AA-A2F4-DA6DCFA07A91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D9F4F150-51CF-41A0-A9EB-9D6F23DC141F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9F4F150-51CF-41A0-A9EB-9D6F23DC141F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9F4F150-51CF-41A0-A9EB-9D6F23DC141F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9F4F150-51CF-41A0-A9EB-9D6F23DC141F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9281771B-F357-4A9D-90E7-EE5699E3921A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9281771B-F357-4A9D-90E7-EE5699E3921A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9281771B-F357-4A9D-90E7-EE5699E3921A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9281771B-F357-4A9D-90E7-EE5699E3921A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F81FD08-9091-43AA-A2F4-DA6DCFA07A91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F81FD08-9091-43AA-A2F4-DA6DCFA07A91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F81FD08-9091-43AA-A2F4-DA6DCFA07A91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F81FD08-9091-43AA-A2F4-DA6DCFA07A91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0ED410EC-D5E4-4031-B855-F411E67AE312}
+	EndGlobalSection
+EndGlobal

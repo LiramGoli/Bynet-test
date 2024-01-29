@@ -1,0 +1,23 @@
+.body-container {
+  background-color: var(--primary-gray);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container {
+  margin: 15px 15px 15px 15px;
+  text-align: center;
+}
+
+.text-container {
+  display: flex;
+  padding-bottom: 18px;
+  background-color: lightgray;
+  margin: 0 auto;
+  border-radius: 6px;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+}
+  

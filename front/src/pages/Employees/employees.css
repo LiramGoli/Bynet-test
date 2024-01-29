@@ -1,0 +1,10 @@
+.second-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.second-header h2 {
+  padding-right: 210px;
+  padding-left: 250px;
+}

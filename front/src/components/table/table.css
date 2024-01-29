@@ -1,0 +1,23 @@
+.custom-table {
+  border-collapse: collapse;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: lightgray;
+  color: black;
+}
+
+td button {
+  margin: 4px;
+}
